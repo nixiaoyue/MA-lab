@@ -11,6 +11,7 @@ ay = -data.data(:,3)*convv;      %Y-axis acceleration (Unit: g, Sampling Rate: 2
 az = -data.data(:,4)*convv;      %Z-axis acceleration (Unit: g, Sampling Rate: 1600Hz   
 
 fs = round(1/mean(diff(tt)));   %Z-axis sampling frequency
+tt = (1:length(az))/fs;         %reconstruct time vector to correct for time-stamp bug
 
 %%%% get rid of NaN values
 % look into the data structure to see why NaN values are there
